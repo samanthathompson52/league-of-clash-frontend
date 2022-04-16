@@ -31,10 +31,30 @@
 </template>
 
 <script>
+import axios from 'axios';
+
 export default {
   name: 'HelloWorld',
   props: {
     msg: String
+  },
+  data() {
+    return {
+      posts: [],
+      errors: []
+    }
+  },
+
+  // Fetches posts when the component is created.
+  created() {
+    axios.get(`http://localhost:8080/helloWorld`)
+    .then(response => {
+      // JSON responses are automatically parsed.
+      console.log(response)
+    })
+    .catch(e => {
+      console.log(e)
+    })
   }
 }
 </script>
