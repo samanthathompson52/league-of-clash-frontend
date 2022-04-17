@@ -1,0 +1,48 @@
+<div class="search-section">
+    <div class="container narrow">
+        <h2 class="center-text">Welcome to League of Clash</h2>
+        <h3 class="center-text">Prepare to Ban</h3>
+        <div class="spacing"></div>
+        <div class="row">
+            <div class="col col-md-10">
+                <div class="input-group">
+                    <span class="input-group-text">Enter a Username</span>
+                    <input type="text" class="form-control" v-model="username">
+                </div>
+            </div>
+            <div class="col col-md-2">
+                <button type="button" class="btn btn-primary" @click.native="btnSearch">Search</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="section">
+    <div class="container-fluid margin-0">
+        <h3>Information</h3>
+        <div class="spacing"></div>
+        <div class="row">
+            <div class="col subsection">
+                <h4>Overview</h4>
+                <h5>{{username}}</h5>
+            </div>
+            <div class="col subsection">
+                <h4>Most Played Champions</h4>
+                <div v-for="champion in MostPlayedChampions">
+                    <div class=row>
+                        <h5>{{champion.Name}}</h5>
+                        <p>{{champion.GamesPlayed}}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col subsection">
+                <h4>Highest Win Rate Champions</h4>
+
+            </div>
+            <div class="col subsection">
+                <h4>Proposed Bans</h4>
+
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,26 +1,33 @@
-<template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
-</template>
+<template src="./app.html"></template>
+
+<style>
+  @import '@/css/base.css';
+  @import '@/css/app.css';
+</style>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import HomePage from './views/HomePage/HomePage.vue';
+import AboutPage from './views/HomePage/HomePage.vue';
+import axios from 'axios';
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    HomePage,
+    AboutPage
+  },
+  created() {
+    axios.get(`http://localhost:8080/helloWorld`)
+    .then(response => {
+      // JSON responses are automatically parsed.
+      this.posts = response.data
+      console.log(response);
+    })
+    .catch(e => {
+      this.errors.push(e)
+    })
   }
 }
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
+
