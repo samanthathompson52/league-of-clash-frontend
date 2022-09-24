@@ -1,8 +1,8 @@
 
 :root {
-  --color-primary: rgb(195, 125, 252);
-  --color-primary-dark: rgb(151, 73, 216);
-  --color-secondary: #9c9c9c;
+  --color-primary: rgb(103, 52, 184);
+  --color-primary-dark: rgb(93, 47, 167);
+  --color-secondary: #c5c5c5;
   --color-secondary-dark: #d1d1d1;
 }
 
@@ -10,11 +10,33 @@
   font-weight: normal;
 }
 
+body {
+  background-color: #111535;
+  color:black;
+  font-family: 'Roboto', sans-serif;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.color-white {
+  color: white;
+}
+
+.home-banner {
+  background-image: url("../images/banner-image.png");
+  height: 80%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
 .search-section {
   align-items: center;
   justify-content: center;
-  padding: 2rem !important;
-  margin: 2rem !important;
+  padding: 8vw;
 }
 
 .section {
@@ -22,17 +44,16 @@
   justify-content: center;
   padding: 2rem !important;
   margin: 2rem !important;
-  border-style: solid;
-  border-radius: 10px;
-  border-width: 2px;
+  height: 100%;
 }
 
 .subsection {
-  border-style: solid;
   border-radius: 10px;
-  border-width: 2px;
   padding: 1rem !important;
   margin: 1rem !important;
+  min-width: 200px;
+  background-color: #5C61B0;
+  box-shadow: rgba(0, 0, 0, 0.63) 0px 3px 10px 3px;
 }
 
 .margin-0 {
@@ -65,10 +86,25 @@
 
 .form-control:focus {
   box-shadow: none;
+  background-color: #fafafa;
+  border-color: var(--color-primary-dark);
+  color: var(--color-primary)
 }
 
-.bg-dark {
-  background-color: hsla(0, 0%, 7%, 0.37) !important;
+.form-control {
+  background-color: #ffffff;
+  border-color: var(--color-primary-dark);
+  color: var(--color-primary)
+}
+
+.input-group-text {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary-dark);
+  color: white;
+}
+
+.btn-check:active+.btn-primary:focus, .btn-check:checked+.btn-primary:focus, .btn-primary.active:focus, .btn-primary:active:focus, .show>.btn-primary.dropdown-toggle:focus {
+  box-shadow: 0 0 0 0.25rem rgba(195, 49, 253, 0.25);
 }
 
 h2{
@@ -82,11 +118,12 @@ h3{
 }
 
 h4 {
-  font-size: 2vh;
+  font-size: 2.5vh;
+  color: black;
   padding-bottom: 1vw;
   border-bottom-style: solid;
   border-bottom-width: 1px;
-  border-bottom-color: #9c9c9c;
+  border-bottom-color: black;
 }
 
 header {
@@ -102,7 +139,7 @@ header {
 a,
 .green {
   text-decoration: none;
-  color: rgb(195, 125, 252);
+  color:#5C61B0;
   transition: 0.4s;
 }
 
@@ -116,20 +153,18 @@ nav {
   width: 100%;
   font-size: 12px;
   text-align: center;
-}
-
-nav a.router-link-exact-active {
-  color: var(--color-text);
-}
-
-nav a.router-link-exact-active:hover {
-  background-color: transparent;
+  background-color: #111535;
 }
 
 nav a {
   display: inline-block;
   padding: 0 1rem;
+  color:#5C61B0;
   border-left: 1px solid var(--color-border);
+}
+
+a.nav-link {
+  color:#5C61B0;
 }
 
 nav a:first-of-type {

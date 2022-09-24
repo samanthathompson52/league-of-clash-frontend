@@ -1,13 +1,12 @@
 <template src="./app.html"></template>
 
 <style>
-  @import '@/css/base.css';
   @import '@/css/app.css';
 </style>
 
 <script>
 import HomePage from './views/HomePage/HomePage.vue';
-import AboutPage from './views/HomePage/HomePage.vue';
+import AboutPage from './views/AboutPage/AboutPage.vue';
 import axios from 'axios';
 
 export default {
@@ -24,7 +23,7 @@ export default {
       console.log(response);
     })
     .catch(e => {
-      this.errors.push(e)
+      this.errors.push(e);
     })
   }
 }
